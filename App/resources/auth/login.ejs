@@ -1,0 +1,16 @@
+<%- include('./includes/header.ejs') %>
+
+<head>
+  <title>
+    ورود
+  </title>
+</head>
+<form action="/auth/login" method="post">
+  <i class="bi bi-person"></i>
+  <input type="text" name="username" id="username" placeholder="username">
+  <input type="password" name="password" id="password" placeholder="password">
+  <input type="submit" value="ورود">
+  <a href="/auth/register">ثبت نام</a>
+</form>
+
+<%- include('./includes/footer.ejs') %>

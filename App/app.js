@@ -7,7 +7,9 @@ const autobind = require("auto-bind")
 const path = require("path")
 const multer = require("multer")
 const fs = require("fs")
-
+const expressSesiion = require("express-session")
+const mongodbStore = require("connect-mongo")
+const cookieParser = require("cookie-parser")
 //utility
 const logger = global.log
 
@@ -30,9 +32,26 @@ module.exports = new class Server {
             }).catch(err => global.loger('danger', err))
     }
     setConfigs() {
+        app.use(expressSesiion({
+            secret: 'parhan',
+            cookie: {
+                maxAge: 1000 * 5,
+                httpOnly: true
+            },
+            saveUninitialized: true,
+            resave: true,
+            store: mongodbStore.create(
+                {
+                    mongoUrl: 'mongodb://127.0.0.1:27017/resume'
+                }
+            )
+        }))
         app.set('view engin', 'ejs')
         app.set("views", path.join(__dirname, "resources"))
         app.use("/public", express.static(path.join(__dirname, 'public')))
+        app.use(bodyParser.urlencoded({ extended: true }))
+        app.use(bodyParser.json())
+        app.use(cookieParser("parham"))
         app.use(multer({
             Storage: multer.diskStorage({
                 destination: (req, file, cb) => {
@@ -48,6 +67,8 @@ module.exports = new class Server {
                 }
             })
         }).array("course-img"))
+
+
     }
     configRouter() {
         app.use(require("./router/router.js"))

@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/public/css/user/style.css">
+</head>
+
+<body>
+  <video src="/public/imgs/vecteezy_giant-black-hole-fly-around-4k_22123290.mp4" autoplay muted loop width="100%">
+  </video>
+  <div id="Dashboard">
+    <div class="cases">
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+
+      <a href="">
+        <div class="case">
+          <span></span>
+          <i class="bi bi-person-gear"></i>
+          <p>حساب کاربری</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+<script>
+  window.onmousemove = (e) => {
+    document.querySelectorAll(".case").forEach((c) => {
+      c.querySelector("span").style.left = (e.clientX)-(c.getBoundingClientRect().left) - (c.getBoundingClientRect().width) / 2
+      c.querySelector("span").style.top = (e.clientY)-(c.getBoundingClientRect().top) - (c.getBoundingClientRect().height)/2
+
+
+    })
+  }
+</script>
+
+</html>

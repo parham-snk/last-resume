@@ -1,0 +1,27 @@
+<%- include('./includes/header.ejs') %>
+
+<table>
+  <tr>
+    <th></th>
+    <th>نام</th>
+    <th>نام کاربری</th>
+    <th>ایمیل</th>
+    <th>وضعیت</th>
+  </tr>
+  <% users.forEach((user,index)=>{%>
+  <tr>
+    <td><%=index+1 %></td>
+    <td><%= user.name %></td>
+    <td><%= user.username %></td>
+    <td><%= user.mail %></td>
+
+    <% if(user.status==true){%>
+    <td style="color: rgb(0, 89, 255);">آنلاین</td>
+    <%}else{%>
+    <td style="color: rgb(255, 36, 36);">آفلاین</td>
+
+    <%}%>
+  </tr>
+  <%})%>
+</table>
+<%- include('./includes/footer.ejs') %>
